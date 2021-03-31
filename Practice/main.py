@@ -8,6 +8,7 @@ from CountValley import *
 from JumpingClouds import *
 from Pairs import *
 from RepeatedString import *
+from RotateLeft import *
 
 def main():
 
@@ -64,6 +65,11 @@ def main():
 
     print("Repeated String")
     print(repeatedString("abc", 10))
+    print()
+
+    print("Rotate Left")
+    a = [1,2,3,4,5]
+    print(rotLeft(a, 4))
 
 if __name__ == '__main__':
     main()
