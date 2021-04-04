@@ -9,6 +9,8 @@ from JumpingClouds import *
 from Pairs import *
 from RepeatedString import *
 from RotateLeft import *
+from MinimumBribes import *
+from MinSwaps import *
 
 def main():
 
@@ -70,6 +72,16 @@ def main():
     print("Rotate Left")
     a = [1,2,3,4,5]
     print(rotLeft(a, 4))
+    print()
+
+    print("Minimum Bribes")
+    q = [2, 1, 5, 3, 4]
+    minimumBribes(q)
+    print()
+
+    print("Minimum Swaps")
+    arr = [1,3,5,2,4,6,7]
+    print(minimumSwaps(arr))
 
 if __name__ == '__main__':
     main()
