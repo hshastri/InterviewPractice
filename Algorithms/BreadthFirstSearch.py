@@ -2,7 +2,7 @@ from DataStructures.MyQueue import *
 
 def bfs(graph, startingNodeData):
     myQueue: MyQueue = MyQueue()
-    seen: set = set([])
+    seen: set = set()
 
     myQueue.add(startingNodeData)
 

@@ -3,7 +3,7 @@ from DataStructures.Stack import *
 
 def dfs(graph, startingNode):
     stack: Stack = Stack(startingNode)
-    seen: set = set([])
+    seen: set = set()
 
     while not stack.isEmpty():
         current = stack.pop()

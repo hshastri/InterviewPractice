@@ -11,6 +11,8 @@ from RepeatedString import *
 from RotateLeft import *
 from MinimumBribes import *
 from MinSwaps import *
+from RansomNote import *
+from MaximumToys import *
 
 def main():
 
@@ -82,6 +84,30 @@ def main():
     print("Minimum Swaps")
     arr = [1,3,5,2,4,6,7]
     print(minimumSwaps(arr))
+    print()
+
+    print("Ransom Note")
+    magazine = "give me one grand today night"
+    note = "give me one grand today"
+    magazine2 = "two times three is not four"
+    note2 = "two times two is four"
+    magazine3 = "ive got a lovely bunch of coconuts"
+    note3 = "ive got some coconuts"
+    magazine4 = "I will not kill you"
+    note4 = "I will kill you"
+    note5 = "I will kill kill you"
+    checkMagazine(magazine, note)
+    checkMagazine(magazine2, note2)
+    checkMagazine(magazine3, note3)
+    checkMagazine(magazine4, note4)
+    checkMagazine(magazine4, note5)
+    print()
+
+    print("Maximum Toys")
+    prices = [33324560, 77661073, 31948330, 21522343, 97176507, 5724692, 24699815, 12079402, 6479353, 28430129, 42427721, 57127004, 26256001, 29446837, 65107604, 9809008, 65846182, 8470661, 13597655, 360]
+    k = 100000
+    print(maximumToys(prices, k))
+
 
 if __name__ == '__main__':
     main()
