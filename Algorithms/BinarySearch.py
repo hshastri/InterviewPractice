@@ -19,7 +19,7 @@ def BinarySearchRecursive(arr, value, left, right):
         return False
     mid = (left + right) // 2
     if arr[mid] == value:
-        # print("This value is found at: {}".format(mid))
+        print("This value is found at: {}".format(mid))
         return True
     elif value < arr[mid]:
         return BinarySearchRecursive(arr, value, left, mid - 1)

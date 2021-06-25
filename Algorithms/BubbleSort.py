@@ -3,7 +3,7 @@ def BubbleSort(arr):
     while(isSorted != True):
         isSorted = True
         lastUnsorted = len(arr) - 1
-        for i in range(0,len(arr) - 1): # last interation is i = len(arr) - 2
+        for i in range(0,lastUnsorted): # last iteration is i = len(arr) - 2
             if arr[i] > arr[i + 1]:
                 swap(arr, i, i + 1)
                 isSorted = False
