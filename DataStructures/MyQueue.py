@@ -38,6 +38,8 @@ class MyQueue:
             return
         data = self.head.data
         self.head = self.head.next
+        if self.head == None:
+            self.tail = None
         return data
 
     def printQueue(self):
