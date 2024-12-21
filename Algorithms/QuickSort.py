@@ -39,5 +39,46 @@ def main():
 	QuickSort(arr)
 	print(arr)
 
+	"""
+	OUTPUT:
+	pivot: 2
+	index: 69
+	Recursive call stack 
+	left: [45, 12, 13, 1]
+	right: [69, 99]
+	
+	pivot: 1
+	index: 13
+	Recursive call stack 
+	left: [1, 12]
+	right: [13, 45]
+	
+	pivot: 0
+	index: 12
+	Recursive call stack 
+	left: [1]
+	right: [12]
+	
+	 BASE CASE: left: 0, right: 0
+	 BASE CASE: left: 1, right: 1
+	pivot: 2
+	index: 45
+	Recursive call stack 
+	left: [13]
+	right: [45]
+	
+	 BASE CASE: left: 2, right: 2
+	 BASE CASE: left: 3, right: 3
+	pivot: 4
+	index: 99
+	Recursive call stack 
+	left: [69]
+	right: [99]
+	
+	 BASE CASE: left: 4, right: 4
+	 BASE CASE: left: 5, right: 5
+	[1, 12, 13, 45, 69, 99]
+	"""
+
 if __name__ == '__main__':
     main()
