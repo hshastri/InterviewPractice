@@ -80,7 +80,28 @@ def main():
     print(f"Find 12: {bst.find(12)}")  # Should return False
 
     print(bst.root.val)
+    print("BFS levels")
     print(bst.bfs())
+
+    """In-order traversal:
+    5
+    7
+    10
+    15
+    
+    Find results:
+    Find 7: True
+    Find 12: False
+    10
+    BFS levels:
+    {('10',): 0, ('5', '15'): 1, ('7',): 2}
+    
+        10
+       /  \
+      5   15
+       \
+        7
+    """
 
 if __name__ == '__main__':
     main()
