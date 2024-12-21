@@ -9,7 +9,7 @@ def QuickSortHelper(arr, left, right):
 	pivot : int = (left + right ) // 2
 	print(f"pivot: {pivot}")
 	index : int = partition(arr, left, right, pivot)
-	print(f"index: {arr[index]}")
+	print(f"index: {index}")
 	print("Recursive call stack ")
 	print(f"left: {arr[left: index]}")
 	print(f"right: {arr[index: right + 1]}")
@@ -42,19 +42,19 @@ def main():
 
 	"""
 	pivot: 2
-	index: 69
+	index: 4
 	Recursive call stack 
 	left: [45, 12, 13, 1]
 	right: [69, 99]
 	
 	pivot: 1
-	index: 13
+	index: 2
 	Recursive call stack 
 	left: [1, 12]
 	right: [13, 45]
 	
 	pivot: 0
-	index: 12
+	index: 1
 	Recursive call stack 
 	left: [1]
 	right: [12]
@@ -64,7 +64,7 @@ def main():
 	 BASE CASE: left: 1, right: 1
 	
 	pivot: 2
-	index: 45
+	index: 3
 	Recursive call stack 
 	left: [13]
 	right: [45]
@@ -74,7 +74,7 @@ def main():
 	 BASE CASE: left: 3, right: 3
 	
 	pivot: 4
-	index: 99
+	index: 5
 	Recursive call stack 
 	left: [69]
 	right: [99]
@@ -83,8 +83,8 @@ def main():
 	
 	 BASE CASE: left: 5, right: 5
 	
-	[1, 12, 13, 45, 69, 99]``
-	"""
+	[1, 12, 13, 45, 69, 99]
+		"""
 
 if __name__ == '__main__':
     main()
