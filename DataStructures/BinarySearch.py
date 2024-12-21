@@ -1,3 +1,7 @@
+from collections import deque
+from typing import Dict
+
+
 class TreeNode:
     def __init__(self, val: int):
         self.val = val
@@ -44,6 +48,23 @@ class BinarySearchTree:
             print(current.val)
             self._print_in_order_rec(current.right)
 
+    def bfs(self) -> Dict[str, int]:
+        nodes = deque([self.root])
+        current_level = 0
+        levels = {tuple([str(node.val) for node in nodes]): current_level}
+        while nodes:
+            for i in range(len(nodes)):
+                current = nodes.popleft()
+                if current.left:
+                    nodes.append(current.left)
+                if current.right:
+                    nodes.append(current.right)
+            current_level += 1
+            if nodes:
+                levels[tuple([str(node.val) for node in nodes])] = current_level
+        return levels
+
+
 def main():
     bst = BinarySearchTree()
     bst.insert(10)
@@ -57,6 +78,9 @@ def main():
     print("\nFind results:")
     print(f"Find 7: {bst.find(7)}")  # Should return True
     print(f"Find 12: {bst.find(12)}")  # Should return False
+
+    print(bst.root.val)
+    print(bst.bfs())
 
 if __name__ == '__main__':
     main()
