@@ -3,7 +3,7 @@ from LinkedList import *
 from Stack import *
 from MyQueue import *
 from Heap import *
-from BinarySearch import *
+from BinarySearchTree import *
 
 class Test:
     classVar = 23
@@ -94,31 +94,6 @@ def main():
     myHeap.printHeap()
     myHeap.poll()
     myHeap.printHeap()
-    print()
-
-    print("BINARY SEARCH TREE")
-    testArr3 = [8, 15, 5]
-    binaryTree : BinarySearch = BinarySearch(10)
-    #binaryTree.printInOrder()
-    for i in testArr3:
-        binaryTree.insert(i)
-    binaryTree.printInOrder()
-    print(binaryTree.find(10))
-    for i in testArr3:
-        print(binaryTree.find(i))
-    print(binaryTree.find(100))
-    print()
-
-    print("TEST")
-    test1 = Test()
-    test2 = Test()
-    print(Test.__dict__)
-    print(test1.__dict__)
-    test1.classVar = 34
-    print(Test.__dict__)
-    print(test1.__dict__)
-    print(test2.__dict__)
-    print(test2.classVar)
     print()
 
 if __name__ == '__main__':
