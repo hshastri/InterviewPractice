@@ -1,18 +1,37 @@
-from DataStructures.MyQueue import *
+from Node import *
+from MyQueue import *
 
-def bfs(graph, startingNodeData):
-    myQueue: MyQueue = MyQueue()
-    seen: set = set()
+def BreadthFirstSearch(graph, startingNodeData):
+    searchQueue : MyQueue = MyQueue()
+    seen : set = set([])
 
-    myQueue.add(startingNodeData)
+    searchQueue.add(startingNodeData)
 
-    while not myQueue.isEmpty():
-        current = myQueue.remove()
+    while searchQueue.isEmpty() == False:
+        currentNodeData = searchQueue.remove()
 
-        if current not in seen:
-            seen.add(current)
-            print(current)
+        if currentNodeData not in seen:
+            seen.add(currentNodeData)
+            print(currentNodeData)
 
-        for neighbor in graph[current]:
+        for neighbor in graph[currentNodeData]:
             if neighbor not in seen:
-                myQueue.add(neighbor)
+                searchQueue.add(neighbor)
+
+
+def main():
+    graph = {
+        'A': ['B', 'C', 'D', 'E'],
+        'B': ['A', 'C', 'G'],
+        'C': ['A', 'B', 'D'],
+        'D': ['A', 'C', 'E', 'H'],
+        'E': ['A', 'D', 'F'],
+        'F': ['E', 'G', 'H'],
+        'G': ['B', 'F'],
+        'H': ['D', 'F']
+    }
+
+    BreadthFirstSearch(graph, 'A')
+
+if __name__ == '__main__':
+    main()

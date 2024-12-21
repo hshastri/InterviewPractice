@@ -3,5 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Algorithms" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ConquerorsDataStructures" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ConquerorsDataStructures/MyCollections" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RecursionAndDP" vcs="Git" />
   </component>
 </project>
