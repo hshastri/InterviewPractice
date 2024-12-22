@@ -26,6 +26,35 @@ class BinarySearchTree:
 
         return root
 
+    def find_min_node_in_bst(self) -> TreeNode:
+        curr = self.root
+        while curr and curr.left:
+            curr = curr.left
+        return curr
+
+    def remove_from_bst(self, val:int) -> None:
+        self.root = self._remove_rec(self.root, val)
+
+    def _remove_rec(self, root: TreeNode, val:int):
+        if root is None:
+            return root
+
+        if val < root.val:
+            root.left = self._remove_rec(root.left, val)
+        elif val > root.val:
+            root.right = self._remove_rec(root.right, val)
+        else:
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+            else:
+                min_node = self.find_min_node_in_bst(root.right)
+                root.val = min_node.val
+                root.right = self._remove_rec(root.right, min_node.val)
+
+        return root
+
     def find(self, val: int) -> bool:
         return self._find_rec(self.root, val)
 
@@ -83,6 +112,12 @@ def main():
     print("BFS levels")
     print(bst.bfs())
 
+    bst.insert(4)
+    print(bst.bfs())
+
+    bst.remove_from_bst(4)
+    print(bst.bfs())
+
     """In-order traversal:
     5
     7
@@ -95,12 +130,21 @@ def main():
     10
     BFS levels:
     {('10',): 0, ('5', '15'): 1, ('7',): 2}
+    {('10',): 0, ('5', '15'): 1, ('4', '7'): 2}
     
         10
        /  \
       5   15
+      /\
+     4  7
+     
+     after removing 4:
+     10
+       /  \
+      5   15
        \
         7
+     
     """
 
 if __name__ == '__main__':
